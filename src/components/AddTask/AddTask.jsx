@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
+import { supabase } from '../../supabase';
 
 export const AddTask = () => {
 	const [title, setTitle] = useState('');
@@ -18,7 +18,8 @@ export const AddTask = () => {
 			newErrors.description =
 				'Description must be between 10 to 250 characters.';
 		}
-	}, []);
+		setErrors(newErrors);
+	}, [title, description]);
 
 	const handleAddTask = async (e) => {
 		e.preventDefault();

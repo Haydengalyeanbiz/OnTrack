@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { supabase } from './supabaseClient';
+import { supabase } from '../../supabase';
 
-const Tasks = () => {
+export const Tasks = () => {
 	const [tasks, setTasks] = useState([]);
 
 	useEffect(() => {
